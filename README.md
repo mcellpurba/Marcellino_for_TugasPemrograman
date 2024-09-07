@@ -1,5 +1,5 @@
 # Tugas-1-Pemrograman-Internet-membuat-input-nilai-mahasiswa-dengan-php-dan-html-css-
-
+//Bahasa PHP
 <?php
      if (isset($_GET['submit'])){
         $nilaitugas = $_GET['nilaitugas'];
@@ -26,6 +26,7 @@
     
 ?>
 
+//Bahasa HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,3 +88,72 @@
     
     </body>
 </html>
+
+//Bahasa CSS
+
+button {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: #594caf;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 110px;
+    margin-left: 600px;
+}
+
+label{
+    font-size: 20px;
+}
+
+input[type=text], select{
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container{
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 880px;
+    height: 120%;
+    max-width: 120%;
+    min-height: 120px;
+}
+
+body{
+    background-color: #eaebec;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container form{
+    background-color: #ffffff;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 120%;
+    width: 600px;
+}
+
+.form-group{
+    width: 25%;
+}
