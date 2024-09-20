@@ -1,0 +1,110 @@
+// SCRIPT UNTUK PHP DAN HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Tugas 3.css">
+
+    <title>Pengaturan AC</title>
+</head>
+<body>
+    <h1 class = "judul" Align = "Center" style="font-size: 200%;">  Suhu dan Kelembaban Pada AC</h1> 
+
+    <divc class = "SuhudanKelembaban">
+        <form action="Tugas 3.php" method="get">
+
+            <div class="form-group">
+            <label for = "suhu">Suhu Ruangan</label>
+            <input type="text" id="suhu" name="suhu" value="<?php if(isset($_GET['submit'])){echo $_GET['suhu'];} ?>">
+            <br>
+            <br>
+            <label for = "kelembaban">Kelembaban Ruangan</label>
+            <input type="text" id="kelembaban" name="kelembaban" value="<?php if(isset($_GET['submit'])){echo $_GET['kelembaban'];} ?>">
+            </div>
+
+            <div class="submit">
+            <button type="submit" name="submit">Click</button>
+            </div>
+            <?php
+  if (isset($_GET['submit'])){
+    $Suhu = $_GET['suhu'];
+    $Kelembaban = $_GET['kelembaban'];
+  
+    if ($Suhu >= 60 && $Kelembaban >=56 ){
+        $status = "AC Menyala Berat";
+    }elseif($Suhu >= 30 && $Kelembaban <=55 ){
+        $status = "AC Menyala Sedang";
+    }elseif($Suhu >= 20 && $Kelembaban <=55 ){
+        $status = "AC Menyala Rendah";
+    }elseif($Suhu >= 10 && $Kelembaban >=20 ){
+        $status = "AC Mati";
+    }else{
+        $status = "Error";
+    }
+
+}
+echo "<h3>Keadaan AC</h3>";
+echo "<p> Status AC: $status</p>";
+?>
+        </form>
+    </div>
+
+</body>
+</html>
+
+// SCRIPT CSS UNTUK MENDESAIN
+.form-group{
+    width: 25%;
+}
+
+.SuhudanKelembaban form{
+    background-color: #ffffff;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 120%;
+    width: 600px;
+}
+
+body{
+    background-color: #eaebec;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: #594caf;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 110px;
+    margin-left: 500px;
+}
+
+label{
+    font-size: 20px;
+}
+
+input[type=text], select{
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
