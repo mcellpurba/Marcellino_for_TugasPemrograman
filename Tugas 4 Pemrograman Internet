@@ -1,0 +1,35 @@
+<?php
+class Penerbangan {
+    //properti Penerbangan
+    public $nama;
+    public $maskapai;
+    public $tipepesawat;
+    public $tujuan;
+    public $dari;
+    public $gerbang;
+
+    //metode
+    public function masukgerbang(){
+        return "Gerbang A2 tujuan Medan silakan bersiap-siap keberangkatan akan segera dimulai ";
+    }
+}
+
+//objek dilalui
+$tiketku = new Penerbangan();
+$tiketku->nama = "Marcel";
+$tiketku->maskapai = "Lion Air";
+$tiketku->tipepesawat = "Boeing";
+$tiketku->tujuan = "Medan";
+$tiketku->dari = "Denpasar";
+$tiketku->gerbang = "Gate A2";
+
+//properti penerbangan
+echo "Nama Lengkap: " . $tiketku->nama . "<br>";
+echo "Maskapai: " . $tiketku->maskapai . "<br>";
+echo "Tipe Pesawat: " . $tiketku->tipepesawat . "<br>";
+echo "Tujuan: " . $tiketku->tujuan . "<br>";
+echo "Dari: " . $tiketku->dari . "<br>";
+echo "Gerbang: " . $tiketku->gerbang. "<br>";
+
+echo $tiketku->masukgerbang();
+?>
